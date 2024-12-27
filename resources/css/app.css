@@ -1,0 +1,320 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .triangle-up {
+        clip-path: polygon(50% 0, 50% 0, 0 70%, 100% 70%);
+    }
+    .triangle-down {
+        clip-path: polygon(0 0, 100% 0, 50% 70%, 50% 70%);
+    }
+}
+
+:root {
+    --btn-bg: hsl(var(--twc-primary));
+    --btn-text-color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(var(--twc-primary));
+    border-radius: 999999px;
+    color: #304cff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+::selection {
+    color: black;
+    background-color: hsl(var(--twc-primary) / 0.5);
+}
+
+@font-face {
+    font-family: "Tanha";
+    src: url("./fonts/tanha.eot"), url("./fonts/tanha.ttf"),
+        url("./fonts/tanha.woff"), url("./fonts/tanha.woff2");
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Tanha";
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+#shop-menu {
+    background: linear-gradient(rgba(43, 56, 76, 0.94), rgba(43, 56, 76, 0.94)),
+        url("../../public/img/sidebar.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.glow-primary {
+    filter: drop-shadow(0px 3px 11px hsl(var(--twc-primary) / 1));
+}
+.glow-primary\/10 {
+    filter: drop-shadow(0px 3px 11px hsl(var(--twc-primary) / 0.1));
+}
+.glow-primary\/20 {
+    filter: drop-shadow(0px 3px 11px hsl(var(--twc-primary) / 0.2));
+}
+.glow-primary\/30 {
+    filter: drop-shadow(0px 3px 11px hsl(var(--twc-primary) / 0.3));
+}
+.glow-primary\/40 {
+    filter: drop-shadow(0px 3px 11px hsl(var(--twc-primary) / 0.4));
+}
+.glow-primary\/50 {
+    filter: drop-shadow(0px 3px 11px hsl(var(--twc-primary) / 0.5));
+}
+.glow-primary\/60 {
+    filter: drop-shadow(0px 3px 11px hsl(var(--twc-primary) / 0.6));
+}
+.glow-primary\/70 {
+    filter: drop-shadow(0px 3px 11px hsl(var(--twc-primary) / 0.7));
+}
+.glow-primary\/80 {
+    filter: drop-shadow(0px 3px 11px hsl(var(--twc-primary) / 0.8));
+}
+.glow-primary\/90 {
+    filter: drop-shadow(0px 3px 11px hsl(var(--twc-primary) / 0.9));
+}
+.glow-primary-0 {
+    filter: drop-shadow(0px 3px 11px hsl(var(--twc-primary) / 0));
+}
+
+.glow-hover:not(:hover) {
+    filter: drop-shadow(0px 3px 11px hsl(var(--twc-primary) / 0));
+}
+
+/* ------------------------------------ Home ------------------------------------ */
+
+.bg-img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ------------------------------------ color picker ------------------------------------ */
+
+.swatchGrid {
+    display: grid;
+    grid-template-columns: repeat(8, 28px);
+    grid-template-rows: repeat(2, 28px);
+    grid-gap: 6px;
+}
+
+/* ------------------------------------ nice button ------------------------------------ */
+.bubbly-button {
+    display: inline-block;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    padding: 12px 2rem;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: hsl(var(--twc-primary));
+    color: var(--btn-text-color);
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: transform ease-in 0.1s, box-shadow 0.15s;
+
+    &:hover {
+        box-shadow: 0 2px 25px hsl(var(--twc-primary));
+    }
+
+    &:before,
+    &:after {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 140%;
+        height: 100%;
+        left: -20%;
+        z-index: -1000;
+        transition: all ease-in-out 0.5s;
+        background-repeat: no-repeat;
+    }
+
+    &:before {
+        display: none;
+        top: -75%;
+        background-image: radial-gradient(
+                circle,
+                hsl(var(--twc-primary)) 20%,
+                transparent 20%
+            ),
+            radial-gradient(
+                circle,
+                transparent 20%,
+                hsl(var(--twc-primary)) 20%,
+                transparent 30%
+            ),
+            radial-gradient(
+                circle,
+                hsl(var(--twc-primary)) 20%,
+                transparent 20%
+            ),
+            radial-gradient(
+                circle,
+                hsl(var(--twc-primary)) 20%,
+                transparent 20%
+            ),
+            radial-gradient(
+                circle,
+                transparent 10%,
+                hsl(var(--twc-primary)) 15%,
+                transparent 20%
+            ),
+            radial-gradient(
+                circle,
+                hsl(var(--twc-primary)) 20%,
+                transparent 20%
+            ),
+            radial-gradient(
+                circle,
+                hsl(var(--twc-primary)) 20%,
+                transparent 20%
+            ),
+            radial-gradient(
+                circle,
+                hsl(var(--twc-primary)) 20%,
+                transparent 20%
+            ),
+            radial-gradient(
+                circle,
+                hsl(var(--twc-primary)) 20%,
+                transparent 20%
+            );
+        background-size: 10px 10px, 20px 20px, 15px 15px, 20px 20px, 18px 18px,
+            10px 10px, 15px 15px, 10px 10px, 18px 18px;
+        background-position: 0% 80%, -5% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+            50% 50%, 65% 20%, 85% 30%;
+    }
+
+    &:after {
+        display: none;
+        bottom: -75%;
+        background-image: radial-gradient(
+                circle,
+                hsl(var(--twc-primary)) 20%,
+                transparent 20%
+            ),
+            radial-gradient(
+                circle,
+                hsl(var(--twc-primary)) 20%,
+                transparent 20%
+            ),
+            radial-gradient(
+                circle,
+                transparent 10%,
+                hsl(var(--twc-primary)) 15%,
+                transparent 20%
+            ),
+            radial-gradient(
+                circle,
+                hsl(var(--twc-primary)) 20%,
+                transparent 20%
+            ),
+            radial-gradient(
+                circle,
+                hsl(var(--twc-primary)) 20%,
+                transparent 20%
+            ),
+            radial-gradient(
+                circle,
+                hsl(var(--twc-primary)) 20%,
+                transparent 20%
+            ),
+            radial-gradient(
+                circle,
+                hsl(var(--twc-primary)) 20%,
+                transparent 20%
+            );
+        background-size: 15px 15px, 20px 20px, 18px 18px, 20px 20px, 15px 15px,
+            10px 10px, 20px 20px;
+        background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+            40% 90%, 55% 90%, 70% 90%;
+    }
+
+    &:active {
+        transform: scale(0.9);
+        background-color: hsl(var(--twc-primary) / 0.6);
+        box-shadow: 0 2px 25px hsl(var(--twc-primary));
+    }
+
+    &.animate {
+        &:before {
+            display: block;
+            animation: topBubbles ease-in-out 0.75s forwards;
+        }
+        &:after {
+            display: block;
+            animation: bottomBubbles ease-in-out 0.75s forwards;
+        }
+    }
+}
+
+@keyframes topBubbles {
+    0% {
+        background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+            40% 90%, 55% 90%, 70% 90%;
+    }
+    50% {
+        background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+            50% 50%, 65% 20%, 90% 30%;
+    }
+    100% {
+        background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+            50% 40%, 65% 10%, 90% 20%;
+        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+}
+
+@keyframes bottomBubbles {
+    0% {
+        background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+            70% -10%, 70% 0%;
+    }
+    50% {
+        background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%,
+            95% 60%, 105% 0%;
+    }
+    100% {
+        background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%,
+            95% 70%, 110% 10%;
+        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+}
+
+@media print {
+    *:not(.print) {
+        display: none;
+    }
+
+    .print {
+        display: block !important;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
