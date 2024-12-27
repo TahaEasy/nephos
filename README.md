@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-#Nephos
+# Nephos
 
 A shopping website built with laravel and livewire and styled with tailwind and tailwind-colors(for themes)
 
